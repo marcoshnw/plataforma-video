@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h1>Meus Estudos</h1>
+            </div>
+            <div class="search-placeholder">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Pesquisar videoaulas...">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar de categorias -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="categories-nav">
+                <button class="category-btn active" data-category="todas">
+                    <span class="category-icon">▣</span>
+                    <span>Todas</span>
+                </button>
+                <button class="category-btn" data-category="portugues">
+                    <span class="category-icon">📝</span>
+                    <span>Português</span>
+                </button>
+                <button class="category-btn" data-category="matematica">
+                    <span class="category-icon">🔢</span>
+                    <span>Matemática</span>
+                </button>
+                <button class="category-btn" data-category="informatica">
+                    <span class="category-icon">💻</span>
+                    <span>Informática</span>
+                </button>
+                <button class="category-btn" data-category="direito-constitucional">
+                    <span class="category-icon">⚖️</span>
+                    <span>Direito Constitucional</span>
+                </button>
+                <button class="category-btn" data-category="direito-administrativo">
+                    <span class="category-icon">📋</span>
+                    <span>Direito Administrativo</span>
+                </button>
+                <button class="category-btn" data-category="legislacao">
+                    <span class="category-icon">📜</span>
+                    <span>Legislação</span>
+                </button>
+                <button class="category-btn" data-category="conhecimentos-gerais">
+                    <span class="category-icon">🌍</span>
+                    <span>Conhecimentos Gerais</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Área principal -->
+        <main class="video-grid">
+            <div class="container" id="videoCardsContainer">
+                <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay do sidebar para mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Modal do player de vídeo -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <div class="video-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
