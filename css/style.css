@@ -162,16 +162,18 @@ body {
 
 .login-container {
     width: 100%;
+
     max-width: 450px;
+
     padding: 24px;
+    
 
     position: relative;
+
     z-index: 1;
 
     margin-left: auto;
     margin-right: 10%;
-
-    transform: translateY(-50px);
 }
 
 @media (max-width: 1024px) {
@@ -509,6 +511,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
 
     .transition-m {
         font-size: 6rem;
@@ -1503,6 +1506,12 @@ header h1 {
 
     .video-modal {
         padding: 12px;
+    }
+
+
+    .login-page {
+        align-items: flex-start;
+        padding-top: 7vh;
     }
 
     .video-info {
