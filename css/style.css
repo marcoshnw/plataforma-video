@@ -1277,6 +1277,11 @@ header h1 {
     .card-content p {
         font-size: 0.85rem;
     }
+
+    .login-page {
+        align-items: flex-start;
+        padding-top: 15vh;
+    }
 }
 
 
