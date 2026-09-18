@@ -99,6 +99,13 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .login-page {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .login-background {
     position: fixed;
 
@@ -925,6 +932,9 @@ header h1 {
     border: 1px solid rgba(148, 163, 184, 0.10);
 }
 
+
+
+
 .video-card::before {
     content: '';
 
@@ -1450,6 +1460,12 @@ header h1 {
 /* =========================================================
    RESPONSIVIDADE MODAL
 ========================================================= */
+
+@media (min-width: 769px) {
+    .modal-content {
+        max-width: min(850px, 80vw);
+    }
+}
 
 @media (max-width: 768px) {
 
