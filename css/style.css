@@ -99,14 +99,6 @@ body {
     overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .login-page {
-        align-items: flex-start;
-        justify-content: center;
-        padding-top: 0;
-    }
-}
-
 .login-background {
     position: fixed;
 
