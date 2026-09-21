@@ -535,7 +535,7 @@ header {
 
     color: var(--text);
 
-    padding: 24px 0;
+    padding: 16px 0;
 
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.28),
@@ -558,7 +558,7 @@ header .container {
 
     flex-wrap: wrap;
 
-    gap: 24px;
+    gap: 16px;
 }
 
 .header-left {
@@ -566,7 +566,7 @@ header .container {
 
     align-items: center;
 
-    gap: 16px;
+    gap: 12px;
 }
 
 .header-right {
@@ -574,7 +574,7 @@ header .container {
 
     align-items: center;
 
-    gap: 16px;
+    gap: 12px;
 }
 
 .menu-toggle {
@@ -1243,7 +1243,7 @@ header h1 {
 @media (max-width: 480px) {
 
     header {
-        padding: 20px 0;
+        padding: 12px 0;
     }
 
     header h1 {

@@ -135,12 +135,14 @@ function configurarEventos() {
         });
     }
 
-    // Logout
-    logoutBtn.addEventListener('click', () => {
-        sessionStorage.removeItem('loggedIn');
-        sessionStorage.removeItem('username');
-        window.location.href = 'index.html';
-    });
+    // Flashcards button in sidebar - navigate to flashcards page (already on flashcards page)
+    const flashcardsBtn = document.getElementById('flashcardsBtn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Already on flashcards page, do nothing
+        });
+    }
 }
 
 // Confirmar nova sessão
