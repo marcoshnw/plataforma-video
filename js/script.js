@@ -147,7 +147,7 @@ function renderizarCards(filtro = 'todas', pesquisa = '') {
         container.innerHTML = '<p class="no-results">Nenhuma videoaula encontrada.</p>';
     }
 }
-
+// função para atualizar o vídeo do modal
 // Função para abrir modal
 function abrirModal(videoaula) {
     const modal = document.getElementById('videoModal');
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('active');
             categoriaAtual = button.dataset.category;
             renderizarCards(categoriaAtual, termoPesquisa);
-            
+
             // Fechar sidebar no mobile após selecionar categoria
             if (window.innerWidth <= 768) {
                 sidebar.classList.remove('open');
@@ -214,6 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Evento do botão Flashcards
+    const flashcardsBtn = document.getElementById('flashcardsBtn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', () => {
+            window.location.href = 'flashcards.html';
+        });
+    }
     
     // Evento de pesquisa
     const searchInput = document.getElementById('searchInput');

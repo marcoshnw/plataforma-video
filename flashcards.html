@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plataforma - Flashcards</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flashcards.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h1>Flashcards</h1>
+            </div>
+            <div class="header-right">
+                <button class="admin-btn" id="adminBtn" title="Administração">
+                    <span>⚙️</span>
+                </button>
+                <button class="back-btn" id="backBtn" title="Voltar">
+                    <span>←</span>
+                </button>
+                <button class="logout-btn" id="logoutBtn" title="Sair">
+                    <span>🚪</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Área principal -->
+        <main class="flashcards-main">
+            <div class="container">
+                <div class="flashcards-layout">
+                    <!-- Painel Esquerdo - Controles -->
+                    <div class="left-panel">
+                        <div class="panel-card">
+                            <h2>🃏 Flashcards</h2>
+                            
+                            <form id="selectionForm" class="selection-form">
+                                <div class="form-group">
+                                    <label for="materiaSelect">Matéria</label>
+                                    <select id="materiaSelect" required>
+                                        <option value="">Selecione uma matéria</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="assuntoGroup" style="display: none;">
+                                    <label for="assuntoSelect">Assunto</label>
+                                    <select id="assuntoSelect">
+                                        <option value="">Todos os assuntos</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="quantidadeSelect">Quantidade</label>
+                                    <select id="quantidadeSelect" required>
+                                        <option value="5">5 cards</option>
+                                        <option value="10">10 cards</option>
+                                        <option value="20" selected>20 cards</option>
+                                        <option value="30">30 cards</option>
+                                        <option value="50">50 cards</option>
+                                        <option value="all">Todos</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-info" id="cardsDisponiveis"></div>
+
+                                <button type="submit" class="start-btn" id="startBtn">Começar</button>
+                            </form>
+
+                            <!-- Informações da Sessão -->
+                            <div id="sessionInfo" class="session-info" style="display: none;">
+                                <h3>Sessão Atual</h3>
+                                <div class="info-row">
+                                    <span class="info-label">Matéria:</span>
+                                    <span class="info-value" id="infoMateria">-</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Assunto:</span>
+                                    <span class="info-value" id="infoAssunto">-</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Cards:</span>
+                                    <span class="info-value" id="infoQuantidade">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Painel Direito - Flashcard -->
+                    <div class="right-panel">
+                        <!-- Estado Inicial -->
+                        <div id="initialState" class="panel-state">
+                            <div class="empty-state">
+                                <span class="empty-icon">🃏</span>
+                                <h3>Selecione uma matéria e clique em Começar</h3>
+                                <p>Os flashcards aparecerão aqui</p>
+                            </div>
+                        </div>
+
+                        <!-- Estado de Sessão -->
+                        <div id="sessionState" class="panel-state" style="display: none;">
+                            <div class="session-header">
+                                <div class="progress-info">
+                                    <span id="cardCounter">1 / 20</span>
+                                    <span id="progressPercent">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div id="progressFill" class="progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div class="flashcard-container">
+                                <div class="flashcard" id="flashcard">
+                                    <div class="flashcard-content">
+                                        <div class="flashcard-question">
+                                            <h3>Pergunta</h3>
+                                            <p id="questionText">Qual é a capital do Brasil?</p>
+                                        </div>
+                                        <div class="flashcard-answer" id="answerSection" style="display: none;">
+                                            <h3>Resposta</h3>
+                                            <p id="answerText">Brasília.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="session-actions">
+                                <button id="showAnswerBtn" class="action-btn primary-btn">Mostrar Resposta</button>
+                                <div id="answerButtons" class="answer-buttons" style="display: none;">
+                                    <button id="wrongBtn" class="action-btn wrong-btn">❌ Errei</button>
+                                    <button id="correctBtn" class="action-btn correct-btn">✅ Acertei</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estado de Resultado -->
+                        <div id="resultState" class="panel-state" style="display: none;">
+                            <div class="result-card">
+                                <h2>🎉 Sessão concluída!</h2>
+                                
+                                <div class="result-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value" id="totalCards">20</span>
+                                        <span class="stat-label">Cards respondidos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value success" id="correctCount">16</span>
+                                        <span class="stat-label">Acertos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value error" id="wrongCount">4</span>
+                                        <span class="stat-label">Erros</span>
+                                    </div>
+                                </div>
+
+                                <div class="result-percentage">
+                                    <span class="percentage-value" id="percentageValue">80%</span>
+                                    <span class="percentage-label">Aproveitamento</span>
+                                </div>
+
+                                <div class="result-visual">
+                                    <div class="visual-item">
+                                        <span class="visual-dot green"></span>
+                                        <span id="visualCorrect">16 acertos</span>
+                                    </div>
+                                    <div class="visual-item">
+                                        <span class="visual-dot red"></span>
+                                        <span id="visualWrong">4 erros</span>
+                                    </div>
+                                </div>
+
+                                <div class="result-actions">
+                                    <button id="reviewErrorsBtn" class="result-btn secondary-btn">Revisar Erros</button>
+                                    <button id="retryBtn" class="result-btn primary-btn">Tentar Novamente</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay do sidebar para mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="js/flashcards-data.js"></script>
+    <script src="js/flashcards.js"></script>
+</body>
+</html>

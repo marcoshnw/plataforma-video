@@ -1,0 +1,511 @@
+/* =========================================================
+   FLASHCARDS ADMIN - ESTILOS ESPECÍFICOS
+========================================================= */
+
+.admin-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.add-btn:hover {
+    background: linear-gradient(135deg, #7477f4 0%, #9b6df8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-soft);
+}
+
+.filter-group select {
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: rgba(99, 102, 241, 0.50);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.filter-group select option {
+    background: #151f33;
+    color: var(--text);
+}
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.table-container {
+    background:
+        linear-gradient(
+            145deg,
+            #151f33 0%,
+            #101827 100%
+        );
+
+    border: 1px solid rgba(148, 163, 184, 0.10);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.flashcards-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.flashcards-table thead {
+    background: rgba(99, 102, 241, 0.08);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.flashcards-table th {
+    padding: 16px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-light);
+}
+
+.flashcards-table tbody tr {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    transition: background 0.2s ease;
+}
+
+.flashcards-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.flashcards-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.flashcards-table td {
+    padding: 16px;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.flashcards-table td:first-child {
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 60px;
+}
+
+.flashcards-table td:nth-child(2) {
+    font-weight: 500;
+    width: 150px;
+}
+
+.flashcards-table td:nth-child(3) {
+    color: var(--text-soft);
+    width: 180px;
+}
+
+.flashcards-table td:nth-child(4) {
+    max-width: 400px;
+}
+
+.flashcards-table td:nth-child(5) {
+    width: 120px;
+    text-align: right;
+}
+
+/* =========================================================
+   BOTÕES DE AÇÃO
+========================================================= */
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.edit-btn {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--primary-light);
+    border: 1px solid rgba(99, 102, 241, 0.30);
+}
+
+.edit-btn:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: rgba(99, 102, 241, 0.50);
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.30);
+}
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.50);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.form-card {
+    background:
+        linear-gradient(
+            145deg,
+            #151f33 0%,
+            #101827 100%
+        );
+
+    border: 1px solid rgba(148, 163, 184, 0.10);
+    border-radius: 20px;
+
+    padding: 40px;
+
+    max-width: 700px;
+    margin: 0 auto;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30),
+        0 8px 20px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.form-card h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 32px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.edit-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-form .form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-soft);
+}
+
+.edit-form .form-group input,
+.edit-form .form-group select,
+.edit-form .form-group textarea {
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+.edit-form .form-group input:focus,
+.edit-form .form-group select:focus,
+.edit-form .form-group textarea:focus {
+    border-color: rgba(99, 102, 241, 0.50);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.edit-form .form-group select option {
+    background: #151f33;
+    color: var(--text);
+}
+
+.edit-form .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    justify-content: flex-end;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-soft);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(148, 163, 184, 0.25);
+    transform: translateY(-2px);
+}
+
+.save-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.save-btn:hover {
+    background: linear-gradient(135deg, #7477f4 0%, #9b6df8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* =========================================================
+   MODAL DE CONFIRMAÇÃO
+========================================================= */
+
+.confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 7, 15, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.confirm-modal .modal-content {
+    background:
+        linear-gradient(
+            145deg,
+            #172238,
+            #0e1728
+        );
+
+    border: 1px solid rgba(129, 140, 248, 0.20);
+    border-radius: 18px;
+    max-width: 450px;
+    width: 100%;
+    padding: 32px;
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.60),
+        0 10px 25px rgba(0, 0, 0, 0.30);
+}
+
+.confirm-modal h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.confirm-modal p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.confirm-modal .delete-btn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.confirm-modal .delete-btn:hover {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .table-container {
+        border-radius: 12px;
+        overflow-x: auto;
+    }
+
+    .flashcards-table {
+        min-width: 600px;
+    }
+
+    .flashcards-table th,
+    .flashcards-table td {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .flashcards-table td:nth-child(4) {
+        max-width: 250px;
+    }
+
+    .form-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .form-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .add-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-card {
+        padding: 20px 16px;
+    }
+
+    .flashcards-table th,
+    .flashcards-table td {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}

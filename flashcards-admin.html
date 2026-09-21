@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plataforma - Administração de Flashcards</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flashcards.css">
+    <link rel="stylesheet" href="css/flashcards-admin.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h1>Administração - Flashcards</h1>
+            </div>
+            <div class="header-right">
+                <button class="back-btn" id="backBtn" title="Voltar">
+                    <span>←</span>
+                </button>
+                <button class="logout-btn" id="logoutBtn" title="Sair">
+                    <span>🚪</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Área principal -->
+        <main class="flashcards-main">
+            <div class="container">
+                <!-- Lista de Flashcards -->
+                <div id="flashcardsList" class="admin-section">
+                    <div class="section-header">
+                        <h2>🃏 Gerenciar Flashcards</h2>
+                        <button id="addFlashcardBtn" class="add-btn">+ Novo Flashcard</button>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="filterMateria">Matéria</label>
+                            <select id="filterMateria">
+                                <option value="">Todas</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterAssunto">Assunto</label>
+                            <select id="filterAssunto">
+                                <option value="">Todos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Tabela -->
+                    <div class="table-container">
+                        <table class="flashcards-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Matéria</th>
+                                    <th>Assunto</th>
+                                    <th>Pergunta</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="flashcardsTableBody">
+                                <!-- Cards serão gerados dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="noResults" class="no-results" style="display: none;">
+                        Nenhum flashcard encontrado.
+                    </div>
+                </div>
+
+                <!-- Formulário de Edição/Criação -->
+                <div id="flashcardForm" class="admin-section" style="display: none;">
+                    <div class="form-card">
+                        <h2 id="formTitle">Novo Flashcard</h2>
+
+                        <form id="editForm" class="edit-form">
+                            <input type="hidden" id="editId">
+
+                            <div class="form-group">
+                                <label for="editMateria">Matéria *</label>
+                                <select id="editMateria" required>
+                                    <option value="">Selecione uma matéria</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editAssunto">Assunto *</label>
+                                <input type="text" id="editAssunto" placeholder="Ex: Classes Gramaticais" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editPergunta">Pergunta *</label>
+                                <textarea id="editPergunta" rows="3" placeholder="Digite a pergunta..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editResposta">Resposta *</label>
+                                <textarea id="editResposta" rows="3" placeholder="Digite a resposta..." required></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="cancelBtn" class="cancel-btn">Cancelar</button>
+                                <button type="submit" class="save-btn">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmModal" class="confirm-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirmar Exclusão</h3>
+            <p>Tem certeza que deseja excluir este flashcard?</p>
+            <div class="modal-actions">
+                <button id="cancelDeleteBtn" class="cancel-btn">Cancelar</button>
+                <button id="confirmDeleteBtn" class="delete-btn">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay do sidebar para mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="js/flashcards-data.js"></script>
+    <script src="js/flashcards-admin.js"></script>
+</body>
+</html>
